@@ -1,13 +1,15 @@
-NAME		=	megaphone
+NAME		=	phone_book
 
 #----- HEADER -----
 H_DIR	=	include
-H		=
-H_NODIR	=	$(notdir $(H))
+H		=	$(H_DIR)/Contact.hpp \
+			$(H_DIR)/PhoneBook.hpp
 
 #----- SRC ----
 SRC_DIR	=	src
-SRC		=	megaphone.cpp
+SRC		=	$(SRC_DIR)/main.cpp \
+			$(SRC_DIR)/Contact.cpp \
+			$(SRC_DIR)/PhoneBook.cpp
 
 #----- OBJ -----
 OBJ		=	$(SRC:.cpp=.o)
@@ -18,17 +20,21 @@ H_FLAGS		=	-I$(H_DIR)
 C_FLAGS		=	-std=c++98 -Wall -Wextra -Werror
 LIB_FLAGS	=
 
+#----- IMPICIT RULES -----
+$(addprefix $(SRC_DIR)/, %.o):	$(addprefix $(SRC_DIR)/, %.cpp)
+	$(CC) YES $(H_FLAGS) $(C_FLAGS) $< -o $@
+
 #----- RULES
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(LIB_FLAGS) $(OBJ) -o $@
+	$(CC) $(H_FLAGS) $(LIB_FLAGS) $(OBJ) -o $@
 
 clean:
-	$(RM) -rf $(OBJ_DIR)
+	$(RM) -rf $(OBJ)
 
 fclean: clean
-	$(RM) -rf $(OBJ_DIR)
+	$(RM) -rf $(OBJ)
 	$(RM) $(NAME)
 
 re: fclean all
@@ -36,14 +42,11 @@ re: fclean all
 n:
 	norminette
 
-#----- IMPICIT RULES -----
-$(addprefix $(OBJ_DIR)/, %.o):	$(addprefix $(SRC_DIR)/, %.cpp) $(H)
-	@$(CC) -Iinclude$(H_FLAGS) $(C_FLAGS) $< -o $@
-.PHONY: clean fclean re all
-
 #----- UTILS -----
 RED				=	\033[0;31m
 CYAN			=	\033[0;36m
 GREEN 			=	\033[1;32m
 YELLOW 			=	\033[1;33m
 NC 				=	\033[0m
+
+.PHONY: clean fclean re all
