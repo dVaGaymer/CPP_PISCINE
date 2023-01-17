@@ -1,15 +1,12 @@
-NAME		=	agenda
+NAME		=	phone_book
 
 #----- HEADER -----
 H_DIR	=	include
-H		=	$(H_DIR)/Contact.hpp \
-			$(H_DIR)/PhoneBook.hpp
+H		=	$(H_DIR)/
 
 #----- SRC ----
 SRC_DIR	=	src
-SRC		=	$(SRC_DIR)/main.cpp \
-			$(SRC_DIR)/Contact.cpp \
-			$(SRC_DIR)/PhoneBook.cpp
+SRC		=	$(SRC_DIR)/main.cpp
 
 #----- OBJ -----
 OBJ		=	$(SRC:.cpp=.o)
