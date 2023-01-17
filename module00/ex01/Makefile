@@ -21,8 +21,8 @@ C_FLAGS		=	-std=c++98 -Wall -Wextra -Werror
 LIB_FLAGS	=
 
 #----- IMPICIT RULES -----
-$(addprefix $(SRC_DIR)/, %.o):	$(addprefix $(SRC_DIR)/, %.cpp)
-	$(CC) YES $(H_FLAGS) $(C_FLAGS) $< -o $@
+$(addprefix $(SRC_DIR)/, %.o):	$(addprefix $(SRC_DIR)/, %.cpp) $(H)
+	$(CC) $(H_FLAGS) $(C_FLAGS) -c $< -o $@
 
 #----- RULES
 all: $(NAME)
