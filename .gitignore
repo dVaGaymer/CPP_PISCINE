@@ -1,3 +1,6 @@
+*.dSYM/
+*.json
+megaphone
 # Prerequisites
 *.d
 
