@@ -1,6 +1,5 @@
 *.dSYM/
 *.json
-megaphone
 # Prerequisites
 *.d
 
@@ -33,3 +32,9 @@ megaphone
 *.exe
 *.out
 *.app
+
+megaphone
+agenda
+zombie
+horde
+brain
