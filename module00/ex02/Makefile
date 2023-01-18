@@ -1,4 +1,4 @@
-NAME		=	phone_book
+NAME		=	ex02
 
 #----- HEADER -----
 H_DIR	=	include
@@ -6,7 +6,7 @@ H		=	$(H_DIR)/
 
 #----- SRC ----
 SRC_DIR	=	src
-SRC		=	$(SRC_DIR)/main.cpp
+SRC		=	$(SRC_DIR)/tests.cpp
 
 #----- OBJ -----
 OBJ		=	$(SRC:.cpp=.o)
