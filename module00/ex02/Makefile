@@ -6,7 +6,8 @@ H		=	$(H_DIR)/
 
 #----- SRC ----
 SRC_DIR	=	src
-SRC		=	$(SRC_DIR)/tests.cpp
+SRC		=	$(SRC_DIR)/tests.cpp \
+			$(SRC_DIR)/Account.cpp
 
 #----- OBJ -----
 OBJ		=	$(SRC:.cpp=.o)
