@@ -1,4 +1,4 @@
-NAME		=	zombie
+NAME		=	horde
 
 #----- HEADER -----
 H_DIR	=	include
@@ -7,7 +7,8 @@ H		=	$(H_DIR)/Zombie.hpp
 #----- SRC ----
 SRC_DIR	=	src
 SRC		=	$(SRC_DIR)/main.cpp \
-			$(SRC_DIR)/Zombie.cpp
+			$(SRC_DIR)/Zombie.cpp \
+			$(SRC_DIR)/zombieHorde.cpp
 
 #----- OBJ -----
 OBJ		=	$(SRC:.cpp=.o)
