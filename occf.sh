@@ -46,14 +46,17 @@ $CLASS::$CLASS()
 {
 
 }
+
 $CLASS::$CLASS(const $CLASS &o)
 {
 
 }
+
 $CLASS::~$CLASS()
 {
 
 }
+
 $CLASS & $CLASS::operator=(const $CLASS &o)
 {
 
