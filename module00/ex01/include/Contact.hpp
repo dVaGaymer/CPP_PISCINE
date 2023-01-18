@@ -1,4 +1,6 @@
 #pragma once
+#ifndef __CONTACT_H__
+#define __CONTACT_H__
 
 #include <string>
 #include <iostream>
@@ -6,14 +8,14 @@
 class Contact
 {
 	private:
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickname;
-		std::string	phoneNumber;	
-		std::string	secret;
-		int	 		id;
+		std::string	_firstName;
+		std::string	_lastName;
+		std::string	_nickname;
+		std::string	_phoneNumber;	
+		std::string	_secret;
+		int	 		_id;
 
-		static std::string	format(std::string str);
+		static std::string	_format(std::string str);
 
 	public:
 		Contact();
@@ -28,3 +30,5 @@ class Contact
 		void	askInfo(int id);
 		void	setId(int id);
 };
+
+#endif

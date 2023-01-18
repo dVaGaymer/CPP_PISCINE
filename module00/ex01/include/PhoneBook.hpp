@@ -1,4 +1,6 @@
 #pragma once
+#ifndef __PHONE_BOOK_H__
+#define __PHONE_BOOK_H__
 
 #include <string>
 #include "Contact.hpp"
@@ -6,8 +8,8 @@
 class PhoneBook
 {
 	private:
-		Contact	contacts[8];
-		int		index;
+		Contact	_contacts[8];
+		int		_index;
 
 	public:
 		PhoneBook();
@@ -20,3 +22,4 @@ class PhoneBook
 		void	setIndex(int index);
 		int		getIndex();
 };
+#endif

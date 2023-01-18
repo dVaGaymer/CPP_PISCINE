@@ -2,41 +2,41 @@
 #include "Contact.hpp"
 
 PhoneBook::PhoneBook():
-	index(0)
+	_index(0)
 {}
 
 void	PhoneBook::setIndex(int index)
 {
-	this->index = index; 
+	this->_index = index; 
 }
 int		PhoneBook::getIndex()
 {
-	contacts[index].printBasicInfo(); return this->index;
+	this->_contacts[this->_index].printBasicInfo(); return this->_index;
 }
 
 void	PhoneBook::setContact(Contact c)
 {
-	if (this->index == 8)
-		this->index = 0;
-	c.setId(index + 1);
-	contacts[this->index] = c;
-	this->index++;
+	if (this->_index == 8)
+		this->_index = 0;
+	c.setId(this->_index + 1);
+	this->_contacts[this->_index] = c;
+	this->_index++;
 }
 
 void	PhoneBook::add()
 {
-	if (this->index == 8)
-		this->index = 0;
-	contacts[this->index].askInfo(index + 1);
-	this->index++;
+	if (this->_index == 8)
+		this->_index = 0;
+	this->_contacts[this->_index].askInfo(this->_index + 1);
+	this->_index++;
 }
 
 void	PhoneBook::list()
 {
 	std::cout << "     index|first name| last name|  nickname\n";
 	for(int i = 0; i < 8; i++)
-		if (!this->contacts[i].isEmpty())
-			contacts[i].printBasicInfo();
+		if (!this->_contacts[i].isEmpty())
+			this->_contacts[i].printBasicInfo();
 }
 
 void	PhoneBook::search()
@@ -50,5 +50,5 @@ void	PhoneBook::search()
 		std::cout << "Invalid.\n";
 		return ;
 	}
-	contacts[opt - 1].printCompleteInfo();
+	this->_contacts[opt - 1].printCompleteInfo();
 }
