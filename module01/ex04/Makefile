@@ -1,13 +1,12 @@
-NAME		=	dreamWork
+NAME		=	replace
 
 #----- HEADER -----
 H_DIR	=	include
-H		=	$(H_DIR)/
+H		=
 
 #----- SRC ----
 SRC_DIR	=	src
-SRC		=	$(SRC_DIR)/tests.cpp \
-			$(SRC_DIR)/Account.cpp
+SRC		=	$(SRC_DIR)/main.cpp
 
 #----- OBJ -----
 OBJ		=	$(SRC:.cpp=.o)
