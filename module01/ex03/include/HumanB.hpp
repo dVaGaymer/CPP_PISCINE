@@ -2,23 +2,22 @@
 #ifndef __HUMANB_HPP__
 #define __HUMANB_HPP__
 
+#include <iostream>
+#include "Weapon.hpp"
+
 class HumanB
 {
 	private:
-		Weapon	weapon;
-		std::string	name;
+		std::string	_name;
+		Weapon	*_weapon;
 	public:
 		HumanB();
-		HumanB(std::string name);
-		HumanB(const HumanB &o);
-		~HumanB();
-		HumanB & operator=(const HumanB &o);
+		HumanB(const std::string name);
 
-
-		void	setWeapon(Weapon weapon);
-		Weapon	getWeapon(void);
-		void		setName(std::string name);
-		std::string	getName(void);
+		Weapon				*getWeapon();
+		void				setWeapon(Weapon &weapon);
+		const std::string	getName();
+		void				setName(const std::string name);
 
 		void	attack();
 };

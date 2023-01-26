@@ -1,4 +1,4 @@
-NAME		=	zombie
+NAME		=	violence
 
 #----- HEADER -----
 H_DIR	=	include

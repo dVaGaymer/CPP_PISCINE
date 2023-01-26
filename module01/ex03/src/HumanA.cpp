@@ -1,33 +1,19 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA()
-{
+HumanA::HumanA(Weapon &weapon)
+	:_name("unnamed human"), _weapon(weapon){}
+HumanA::HumanA(const std::string name, Weapon &weapon)
+	:_name(name), _weapon(weapon){}
 
-}
-
-HumanA::HumanA(const HumanA &o)
-{
-
-}
-
-HumanA::~HumanA()
-{
-
-}
-
-HumanA & HumanA::operator=(const HumanA &o)
-{
-
-}
-
-void		HumanA::setWeapon(Weapon weapon){ this->weapon = weapon; }
-Weapon		HumanA::setgetWeapon(void){ return (this->weapon); }
-void		HumanA::setsetName(std::string name){ this->name = name; }
-std::string	HumanA::setgetName(void){ return (this->name); }
+Weapon				HumanA::getWeapon(){ return (this->_weapon);}
+void				HumanA::setWeapon(Weapon &weapon){ this->_weapon = weapon; }
+const std::string	HumanA::getName(){ return (this->_name); }
+void				HumanA::setName(const std::string name){ this->_name = name; }
 
 void	HumanA::attack()
 {
-	std::cout << this->getName();
+	std::cout << this->_name;
 	std::cout << " attacks with their ";
-	std::cout << this->weapon.getType();
+	std::cout << this->_weapon.getType();
+	std::cout << "\n";
 }

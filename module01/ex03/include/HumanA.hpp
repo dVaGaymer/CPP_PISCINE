@@ -2,23 +2,26 @@
 #ifndef __HUMANA_HPP__
 #define __HUMANA_HPP__
 
+#include <iostream>
+#include "Weapon.hpp"
+
+/*
+	Reference vars (Weapon &weapon MUST ALWAYS BE INITIALICED)
+*/
+
 class HumanA
 {
 	private:
-		Weapon	weapon;
-		std::string	name;
+		std::string	_name;
+		Weapon		&_weapon;
 	public:
-		HumanA();
-		HumanA(Weapon weapon);
-		HumanA(Weapon weapon, std::string name);
-		HumanA(const HumanA &o);
-		~HumanA();
-		HumanA & operator=(const HumanA &o);
+		HumanA(Weapon &weapon);
+		HumanA(std::string name, Weapon &weapon);
 
-		void	setWeapon(Weapon weapon);
-		Weapon	getWeapon(void);
-		void		setName(std::string name);
-		std::string	getName(void);
+		Weapon				getWeapon();
+		void				setWeapon(Weapon &weapon);
+		const std::string	getName();
+		void				setName(const std::string name);
 
 		void	attack();
 };

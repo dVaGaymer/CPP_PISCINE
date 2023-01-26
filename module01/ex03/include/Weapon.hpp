@@ -7,13 +7,11 @@
 class Weapon
 {
 	private:
-		std::string	type;
+		std::string	_type;
 
 	public:
 		Weapon();
-		Weapon(const Weapon &o);
-		~Weapon();
-		Weapon & operator=(const Weapon &o);
+		Weapon(const std::string type);
 
 		void				setType(std::string type);
 		const std::string&	getType();
