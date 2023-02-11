@@ -8,7 +8,7 @@ int	main(int argc, char **argv)
 
 	(void)argv;
 	if (argc != 1)
-		return (0);
+		return (-1);
 	h.complain("DEBUG");
 	h.complain("INFO");
 	h.complain("WARNING");
