@@ -1,21 +1,25 @@
 #include "Harl.hpp"
 
 Harl::Harl()
+	:_lvl_n(LVL_AMMOUNT)
 {
-	this->coments["DEBUG"] = &Harl::_debug;
-	this->coments["INFO"] = &Harl::_info;
-	this->coments["WARNING"] = &Harl::_warning;
-	this->coments["ERROR"] = &Harl::_error;
+	this->_lvl_type[0] = "DEBUG"; this->_lvl_func[0] = &Harl::_debug;
+	this->_lvl_type[1] = "INFO"; this->_lvl_func[1] = &Harl::_info;
+	this->_lvl_type[2] = "WARNING"; this->_lvl_func[2] = &Harl::_warning;
+	this->_lvl_type[3] = "ERROR"; this->_lvl_func[3] = &Harl::_error;
+}
+
+void (Harl::*Harl::_getLvlFunc(std::string level))()
+{
+	for (int i = 0; i < this->_lvl_n; i++)
+		if (!level.compare(this->_lvl_type[i]))
+			return (_lvl_func[i]);
+	return (NULL);
 }
 
 void	Harl::complain(std::string level)
 {
-	if (level.compare("DEBUG")
-		&& level.compare("INFO")
-		&& level.compare("WARNING")
-		&& level.compare("ERROR"))
-		return ;
-	(this->*coments[level])();
+	(this->*_getLvlFunc(level))();
 }
 
 void	Harl::_debug()

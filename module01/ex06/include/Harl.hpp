@@ -5,6 +5,8 @@
 #include <iostream>
 #include <map>
 
+# define LVL_AMMOUNT 4
+
 class Harl
 {
 	private:
@@ -12,12 +14,15 @@ class Harl
 		void	_info();
 		void	_warning();
 		void	_error();
-		std::map<std::string, void (Harl::*)()>	_coments;
-		std::map<std::string, int>				_int_level;
+
+		int		_lvl_n;
+		int	_getLvlFunc(std::string level);
+		std::string	_lvl_type[LVL_AMMOUNT];
+		void (Harl::*_lvl_func[LVL_AMMOUNT])(void);
 
 	public:
 		Harl();
-		void	complain(std::string level);
+		void			complain(std::string level);
 };
 #endif
 

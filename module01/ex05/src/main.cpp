@@ -1,7 +1,5 @@
 #include "Harl.hpp"
 
-#include "Harl.hpp"
-
 int	main(int argc, char **argv)
 {
 	Harl	h;
@@ -12,7 +10,7 @@ int	main(int argc, char **argv)
 	h.complain("DEBUG");
 	h.complain("INFO");
 	h.complain("WARNING");
-	h.complain("INFO");
 	h.complain("ERROR");
+	h.complain("INFO");
 	return (0);
 }

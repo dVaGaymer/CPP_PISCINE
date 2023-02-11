@@ -1,4 +1,4 @@
-NAME		=	harlFilter
+NAME		=	harl
 
 #----- HEADER -----
 H_DIR	=	include
