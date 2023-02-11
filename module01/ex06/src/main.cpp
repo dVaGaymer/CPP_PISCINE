@@ -6,8 +6,8 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		std::cout << "Harl is not complaining, It must be dead.";
-		return (0);
+		std::cout << "Harl is making unintelligible sounds.\n";
+		return (-1);
 	}
 	h.complain(*(argv + 1));
 	return (0);
