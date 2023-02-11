@@ -7,8 +7,6 @@ namespace	alg
 	std::string	repalce(const std::string old_str, const std::string s1, const std::string s2)
 	{
 		size_t	i;
-		(void)s1;
-		(void)s2;
 		std::string	new_str = old_str + "\n";
 		i = new_str.find(s1);
 		if (i == std::string::npos)
@@ -28,7 +26,9 @@ int main(int argc, char **argv)
 	std::string		s2 = *(argv + 3);
 /*-----------------------------------------*/
 	std::string		line;
-	std::ifstream	src_file(*(argv + 1));
+	std::ifstream	src_file(filename.c_str());
+	if (!src_file.good())
+		return (-1);
 	std::ofstream	dst_file(std::string(*(argv + 1)) + ".replace");
 	while (std::getline(src_file, line))
 		dst_file << alg::repalce(line, *(argv + 2), *(argv + 3));
