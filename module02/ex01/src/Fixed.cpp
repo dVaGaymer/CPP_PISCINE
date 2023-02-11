@@ -77,12 +77,7 @@ float	Fixed::toFloat() const
 
 int		Fixed::toInt() const
 {
-	return (this->_value >> Fixed::getFBits());
-}
-
-int	Fixed::getFBits()
-{
-	return (_FBITS);
+	return (this->_value >> Fixed::_FBITS);
 }
 
 std::ostream & operator<<(std::ostream &out, const Fixed &f)
