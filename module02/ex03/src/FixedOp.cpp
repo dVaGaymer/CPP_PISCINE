@@ -36,14 +36,32 @@ Fixed Fixed::operator+(const Fixed &o)
 	tmp.setRawBits(this->_value + o.getRawBits());
 	return (tmp);
 }
+Fixed const Fixed::operator+(const Fixed &o) const
+{
+	Fixed	tmp;
+	tmp.setRawBits(this->_value + o.getRawBits());
+	return (tmp);
+}
 Fixed Fixed::operator-(const Fixed &o)
 {
 	Fixed	tmp;
 	tmp.setRawBits(this->_value - o.getRawBits());
 	return (tmp);
 }
-
+Fixed const Fixed::operator-(const Fixed &o) const
+{
+	Fixed	tmp;
+	tmp.setRawBits(this->_value - o.getRawBits());
+	return (tmp);
+}
 Fixed Fixed::operator*(const Fixed &o)
+{
+	Fixed	tmp;
+	tmp.setRawBits((this->_value * o.getRawBits()) >> Fixed::_FBITS);
+	return (tmp);
+}
+
+Fixed Fixed::operator*(const Fixed &o) const
 {
 	Fixed	tmp;
 	tmp.setRawBits((this->_value * o.getRawBits()) >> Fixed::_FBITS);

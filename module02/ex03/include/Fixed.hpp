@@ -25,8 +25,11 @@ class Fixed
 
 		Fixed & operator=(const Fixed &o);
 		Fixed operator+(const Fixed &o);
+		Fixed const operator+(const Fixed &o) const;
 		Fixed operator-(const Fixed &o);
+		Fixed const operator-(const Fixed &o) const;
 		Fixed operator*(const Fixed &o);
+		Fixed operator*(const Fixed &o) const;
 		Fixed operator/(const Fixed &o);
 
 		Fixed & operator++(void);
