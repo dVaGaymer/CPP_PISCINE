@@ -14,20 +14,8 @@ Fixed::Fixed(int const value)
 
 Fixed::Fixed(float const value)
 {
-	float	aux;
-	std::cout << "Int constructor called\n"; 
-
-	this->_value = (int)value << Fixed::_FBITS;
-	aux = value - (int)value;
-	this->_value >>= (Fixed::_FBITS - 1);
-	for (int i = 0; i < Fixed::_FBITS; i++)
-	{
-		aux *= 2;
-		this->_value |= (int)aux;
-		if (i < Fixed::_FBITS - 1)
-			this->_value <<= 1;
-		aux -= (int)aux;
-	}
+	std::cout << "Float constructor called\n"; 
+	this->_value = roundf(value * (1 << Fixed::_FBITS));
 }
 
 Fixed::Fixed(const Fixed &o)
@@ -62,17 +50,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat() const
 {
-	float	float_num;
-	int		aux = 2;
-
-	float_num = 0;
-	for (int i = Fixed::_FBITS; i > 0; i--)
-	{
-		if ((this->_value & (1 << (i - 1))))
-			float_num +=  1 / (float)aux;
-		aux *= 2;
-	}
-	return ((float)this->toInt() + float_num);
+	return ((float)this->_value / (float)(1 << Fixed::_FBITS));
 }
 
 int		Fixed::toInt() const
