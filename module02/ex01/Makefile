@@ -1,4 +1,4 @@
-NAME		=	orthodox
+NAME		=	fixed
 
 #----- HEADER -----
 H_DIR	=	include
