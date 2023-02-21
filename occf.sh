@@ -47,7 +47,7 @@ $CLASS::$CLASS()
 
 }
 
-$CLASS::$CLASS(const $CLASS &o)
+$CLASS::$CLASS($CLASS const &o)
 {
 
 }
@@ -57,7 +57,7 @@ $CLASS::~$CLASS()
 
 }
 
-$CLASS & $CLASS::operator=(const $CLASS &o)
+$CLASS & $CLASS::operator=($CLASS const &o)
 {
 
 }" >> $SRC_DIR"/"$CLASS_CPP
@@ -70,9 +70,9 @@ class $CLASS
 {
 	public:
 		$CLASS();
-		$CLASS(const $CLASS &o);
+		$CLASS($CLASS const &o);
 		~$CLASS();
-		$CLASS & operator=(const $CLASS &o);
+		$CLASS & operator=($CLASS const &o);
 };
 #endif
 " >> $H_DIR"/"$CLASS_HPP

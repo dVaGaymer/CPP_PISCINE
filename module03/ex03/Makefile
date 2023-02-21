@@ -1,13 +1,20 @@
-NAME		=	orthodox
+NAME		=	diamondTrap
 
 #----- HEADER -----
 H_DIR	=	include
-H		=	$(H_DIR)/Fixed.hpp
+H		=	$(H_DIR)/ClapTrap.hpp \
+			$(H_DIR)/ScavTrap.hpp \
+			$(H_DIR)/FragTrap.hpp \
+			$(H_DIR)/DiamondTrap.hpp
+
 
 #----- SRC ----
 SRC_DIR	=	src
 SRC		=	$(SRC_DIR)/main.cpp \
-			$(SRC_DIR)/Fixed.cpp
+			$(SRC_DIR)/ClapTrap.cpp \
+			$(SRC_DIR)/ScavTrap.cpp \
+			$(SRC_DIR)/FragTrap.cpp \
+			$(SRC_DIR)/DiamondTrap.cpp
 
 #----- OBJ -----
 OBJ		=	$(SRC:.cpp=.o)
@@ -15,7 +22,7 @@ OBJ		=	$(SRC:.cpp=.o)
 #----- FLAGS -----
 CC			=	c++
 H_FLAGS		=	-I$(H_DIR)
-C_FLAGS		=	-std=c++98 -Wall -Wextra -Werror
+C_FLAGS		=	-std=c++98 -Wall -Wextra -Werror -Wshadow -Wno-shadow
 LIB_FLAGS	=
 
 #----- IMPICIT RULES -----
