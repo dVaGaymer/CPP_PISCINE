@@ -1,8 +1,11 @@
 #include <string>
 #include <iostream>
 
+void	l(void){system("leaks brain");}
+
 int	main(void)
 {
+	atexit(l);
 	std::string	salute = "HI THIS IS BRAIN";
 	std::string	*stringPTR = &salute;
 	std::string	&stringREF = salute;

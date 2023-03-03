@@ -27,7 +27,7 @@ $(addprefix $(SRC_DIR)/, %.o):	$(addprefix $(SRC_DIR)/, %.cpp) $(H)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(H_FLAGS) $(LIB_FLAGS) $(OBJ) -o $@
+	$(CC) $(H_FLAGS) $(LIB_FLAGS) $(C_FLAGS) $(OBJ) -o $@
 
 clean:
 	$(RM) -rf $(OBJ)

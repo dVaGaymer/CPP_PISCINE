@@ -17,8 +17,11 @@ namespace	alg
 	}
 }
 
+void	l(void){system("leaks replace");}
+
 int main(int argc, char **argv)
 {
+	atexit(l);
 	if (argc != 4)
 		return (-1);
 	std::string		filename = *(argv + 1);

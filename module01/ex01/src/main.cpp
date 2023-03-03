@@ -7,14 +7,14 @@ void	announceHorde(Zombie *horde)
 		horde[i].announce();
 }
 
-// void	l(){system("leaks horde");}
+void	l(){system("leaks horde");}
 
 int	main(int argc, char **argv)
 {
 	Zombie*	horde;
 	(void)argc;(void)argv;
 
-	// atexit(l);
+	atexit(l);
 	horde = zombieHorde(N, "Julian");
 	announceHorde(horde);
 	delete[] horde;
