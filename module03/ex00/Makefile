@@ -1,14 +1,14 @@
-NAME		=	fixed
+NAME		=	clapTrap
 
 #----- HEADER -----
 H_DIR	=	include
-H		=	$(H_DIR)/Fixed.hpp
+H		=	$(H_DIR)/ClapTrap.hpp
 
 #----- SRC ----
 SRC_DIR	=	src
 SRC		=	$(SRC_DIR)/main.cpp \
-			$(SRC_DIR)/Fixed.cpp
-
+			$(SRC_DIR)/ClapTrap.cpp
+			
 #----- OBJ -----
 OBJ		=	$(SRC:.cpp=.o)
 

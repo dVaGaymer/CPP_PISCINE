@@ -1,4 +1,4 @@
-NAME		=	orthodox
+NAME		=	triangle
 
 #----- HEADER -----
 H_DIR	=	include

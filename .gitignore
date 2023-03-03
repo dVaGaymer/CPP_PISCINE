@@ -33,6 +33,8 @@
 *.out
 *.app
 
+.cache/
+
 megaphone
 agenda
 zombie
@@ -44,3 +46,4 @@ harl
 harlFilter
 orthodox
 fixed
+triangle

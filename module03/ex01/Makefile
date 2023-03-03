@@ -1,13 +1,16 @@
-NAME		=	fixed
+NAME		=	scavTrap
 
 #----- HEADER -----
 H_DIR	=	include
-H		=	$(H_DIR)/Fixed.hpp
+H		=	$(H_DIR)/ClapTrap.hpp \
+			$(H_DIR)/ScavTrap.hpp
+
 
 #----- SRC ----
 SRC_DIR	=	src
 SRC		=	$(SRC_DIR)/main.cpp \
-			$(SRC_DIR)/Fixed.cpp
+			$(SRC_DIR)/ClapTrap.cpp \
+			$(SRC_DIR)/ScavTrap.cpp
 
 #----- OBJ -----
 OBJ		=	$(SRC:.cpp=.o)
