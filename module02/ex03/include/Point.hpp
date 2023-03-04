@@ -19,10 +19,10 @@ class Point
 		Fixed const getY() const;
 		Fixed const getX() const;
 
-		Point & operator=(Point /*const??*/ &o);
-
-		/*Triangle area = 1/2*|x1(y2-y3)+x2(y3-y1)+x3(y1-y2)|*/
-		static Fixed	area(Point const a, Point const b, Point const c);
-		static bool	is_inside(Point const a, Point const b, Point const c, Point const point);
+		Point const & operator=(Point const &o);
 };
+
+/*Triangle area = 1/2*|x1(y2-y3)+x2(y3-y1)+x3(y1-y2)|*/
+Fixed	area(Point const a, Point const b, Point const c);
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
 #endif

@@ -21,7 +21,7 @@ Fixed::Fixed(float const value)
 Fixed::Fixed(const Fixed &o)
 {
 	std::cout << "Copy constructor called\n"; 
-	this->_value = o.getRawBits();
+	*this = o;
 }
 
 Fixed::~Fixed()
@@ -32,7 +32,7 @@ Fixed::~Fixed()
 Fixed & Fixed::operator=(const Fixed &o)
 {
 	std::cout << "Assignation operator called\n"; 
-	this->_value = o.getRawBits();
+	this->_value = o._value;
 	return (*this);
 }
 

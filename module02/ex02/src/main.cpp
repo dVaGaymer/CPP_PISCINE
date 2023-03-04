@@ -17,6 +17,7 @@ int main( void )
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toFloat() << " as float" << std::endl;
  
 	std::cout << "------------------------\n";
 	Fixed	f1(12.10f);
@@ -41,5 +42,16 @@ int main( void )
 	std::cout << b1 << std::endl;
 	std::cout << f1 + f2 << std::endl;
 	std::cout << Fixed::max( a1, b1 ) << std::endl;
+
+	std::cout << "-----------SUBJECT-------------\n";
+	Fixed a_s;
+	Fixed const b_s( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << a_s << std::endl;
+	std::cout << ++a_s << std::endl;
+	std::cout << a_s << std::endl;
+	std::cout << a_s++ << std::endl;
+	std::cout << a_s << std::endl;
+	std::cout << b_s << std::endl;
+	std::cout << Fixed::max( a_s, b_s ) << std::endl;
 	return 0;
 }
