@@ -16,6 +16,10 @@ class ScavTrap : public virtual ClapTrap
 
 		void	attack(std::string const target);
 		void	guardGate();
+
+		unsigned int	getDefaultHitPoints() const;
+		unsigned int	getDefaultEnergyPoints() const;
+		unsigned int	getDefaultAttackDamage() const;
 };
 #endif
 

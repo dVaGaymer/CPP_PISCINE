@@ -55,6 +55,6 @@ int	main(void)
 	yo.guardGate();
 	yo.highFivesGuys();
 	yo.whoAmI();
-	yo.attack("verga");
+	yo.attack("Ramiro");
 	return (0);
 }

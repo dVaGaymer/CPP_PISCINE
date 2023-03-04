@@ -3,7 +3,7 @@
 
 int	main(void)
 {
-	/** Main 00 */
+	/* Main 00 */
 	std::cout << "EX00 -------------------------------" << std::endl;
 	ClapTrap	ct1;
 	ClapTrap	epic("Epic_ClapTraper");
@@ -23,7 +23,7 @@ int	main(void)
 
 	shit.takeDamage(10);
 
-	/* Main 01 */
+	/* Main 01 */ 
 	std::cout << "EX02 -------------------------------" << std::endl;
 	ScavTrap	st("Alvaro");
 	ScavTrap	st1;
@@ -33,5 +33,6 @@ int	main(void)
 
 	st.attack("Pedro");
 	st.guardGate();
+
 	return (0);
 }

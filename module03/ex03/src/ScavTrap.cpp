@@ -5,18 +5,18 @@ ScavTrap::ScavTrap()
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 	this->_name = "";
-	this->_hitPoints = 0;
-	this->_energyPoints = 0;
-	this->_attackDamage = 0;
+	this->_hitPoints = this->getDefaultHitPoints();
+	this->_energyPoints = this->getDefaultEnergyPoints();
+	this->_attackDamage = this->getDefaultAttackDamage();
 }
 
 ScavTrap::ScavTrap(std::string const name)
 	:ClapTrap(name)
 {
 	this->_name = name;
-	this->_hitPoints = 0;
-	this->_energyPoints = 0;
-	this->_attackDamage = 0;
+	this->_hitPoints = this->getDefaultHitPoints();
+	this->_energyPoints = this->getDefaultEnergyPoints();
+	this->_attackDamage = this->getDefaultAttackDamage();
 }
 
 ScavTrap::ScavTrap(ScavTrap const &o)
@@ -56,3 +56,7 @@ ScavTrap & ScavTrap::operator=(const ScavTrap &o)
 	this->_attackDamage = o._attackDamage;
 	return (*this);
 }
+
+unsigned int	ScavTrap::getDefaultHitPoints() const { return (100); }
+unsigned int	ScavTrap::getDefaultEnergyPoints() const { return (50); }
+unsigned int	ScavTrap::getDefaultAttackDamage() const { return (20); }

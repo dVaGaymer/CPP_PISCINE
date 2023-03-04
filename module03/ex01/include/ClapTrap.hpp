@@ -15,12 +15,20 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const &o);
-		~ClapTrap();
+		virtual ~ClapTrap();
 		ClapTrap & operator=(ClapTrap const &o);
 
 		void attack(std::string const target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+
+		unsigned int	getHitPoints() const;
+		unsigned int	getEnergyPoints() const;
+		unsigned int	getAttackDamage() const;
+
+		void	setHitPoints(unsigned int const hitPoints);
+		void	setEnergyPoints(unsigned int const EnergyPoints);
+		void	setAttackDamage(unsigned int const AttackDamage);
 };
 #endif
 

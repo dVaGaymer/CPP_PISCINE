@@ -5,9 +5,9 @@ DiamondTrap::DiamondTrap()
 {
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 	this->_name = "";
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->_hitPoints = FragTrap::getDefaultHitPoints();
+	this->_energyPoints = ScavTrap::getDefaultEnergyPoints();
+	this->_attackDamage = FragTrap::getDefaultAttackDamage();
 }
 
 /* Being parent ClapTrap virtual it is not possible to have different values
@@ -45,11 +45,6 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const &o)
 	this->_energyPoints = o._energyPoints;
 	this->_attackDamage = o._attackDamage;
 	return (*this);
-}
-
-void	DiamondTrap::attack(std::string const target)
-{
-	ScavTrap::attack(target);
 }
 
 void	DiamondTrap::whoAmI()

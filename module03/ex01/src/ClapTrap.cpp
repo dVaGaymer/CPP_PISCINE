@@ -93,3 +93,11 @@ void ClapTrap::beRepaired(unsigned int amount)
 		: this->_energyPoints - amount;
 	this->_hitPoints += amount;
 }
+
+unsigned int	ClapTrap::getHitPoints() const { return this->_hitPoints; }
+unsigned int	ClapTrap::getEnergyPoints() const { return this->_energyPoints; }
+unsigned int	ClapTrap::getAttackDamage() const { return this->_attackDamage; }
+
+void	ClapTrap::setHitPoints(unsigned int const hitPoints) { this->_hitPoints = hitPoints; }
+void	ClapTrap::setEnergyPoints(unsigned int const energyPoints) { this->_energyPoints = energyPoints; }
+void	ClapTrap::setAttackDamage(unsigned int const attackDamage) {this->_attackDamage = attackDamage; }

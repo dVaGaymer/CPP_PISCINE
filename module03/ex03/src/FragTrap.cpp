@@ -6,18 +6,18 @@ FragTrap::FragTrap()
 {
 	std::cout << "FragTrap default constructor called" << std::endl;
 	this->_name = "";
-	this->_hitPoints = 1;
-	this->_energyPoints = 1;
-	this->_attackDamage = 1;
+	this->_hitPoints = this->getDefaultHitPoints();
+	this->_energyPoints = this->getDefaultEnergyPoints();
+	this->_attackDamage = this->getDefaultAttackDamage();
 }
 
 FragTrap::FragTrap(std::string name)
 	:ClapTrap(name)
 {
 	this->_name = name;
-	this->_hitPoints = 1;
-	this->_energyPoints = 1;
-	this->_attackDamage = 1;
+	this->_hitPoints = this->getDefaultHitPoints();
+	this->_energyPoints = this->getDefaultEnergyPoints();
+	this->_attackDamage = this->getDefaultAttackDamage();
 }
 
 FragTrap::FragTrap(FragTrap const &o)
@@ -55,3 +55,7 @@ FragTrap & FragTrap::operator=(FragTrap const &o)
 	this->_attackDamage = o._attackDamage;
 	return (*this);
 }
+
+unsigned int	FragTrap::getDefaultHitPoints() const { return (100); }
+unsigned int	FragTrap::getDefaultEnergyPoints() const { return (100); }
+unsigned int	FragTrap::getDefaultAttackDamage() const { return (30); }
