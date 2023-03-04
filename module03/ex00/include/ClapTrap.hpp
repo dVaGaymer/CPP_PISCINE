@@ -19,9 +19,11 @@ class ClapTrap
 		ClapTrap & operator=(ClapTrap const &o);
 
 		void attack(std::string const target);
+		//Puede ser conveniente pasar los parametros como const &, es mas rapido entre otros
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
+		//Puede ser conveniente devolver como const &
 		unsigned int	getHitPoints() const;
 		unsigned int	getEnergyPoints() const;
 		unsigned int	getAttackDamage() const;
